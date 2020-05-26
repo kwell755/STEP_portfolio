@@ -1,1 +1,1 @@
-This repo contains Kayla Harwell's portfolio and STEP Projects. 
+This repo contains Kayla Harwell's portfolio and STEP Projects! 
