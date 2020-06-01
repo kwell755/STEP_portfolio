@@ -21,13 +21,11 @@ function KaylaTrivia(){
    const correct_answers = ['b','a','b','c'] ;
    const questions= ['Which hackathon did my team take home our first win? \n a-Google b-Amazon Games c-Bison Hacks','Where am I from? \n a-Buffalo b-NYC c-LA','Out of these places, which one do I want to travel to the most? \n a-Utah b-Italy c-France','In which one of these orgs do I hold a E-Board position? \n a-Student Council b-NSBE c-ACM'];
    var points = 0;
-   var len= questions.length;
    var user_ans;
     
     for(i=0;i< questions.length;i++){
-        let user_ans = prompt(questions[i], "???");
-        if(user_ans==correct_answers[i])
-        {
+        user_ans = prompt(questions[i], "???");
+        if(user_ans==correct_answers[i]){
             points+=1;
             alert('Correct! You have a score of '+points+' points');
         }
@@ -35,6 +33,7 @@ function KaylaTrivia(){
              alert('Incorrect:( You have a score of '+points+' points');
         }
     }
+
     if(points >=3){
         alert('Your final score is ' + points + ' Yay you did great!');
     }

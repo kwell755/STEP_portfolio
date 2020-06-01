@@ -1,31 +1,25 @@
 #background{
-
      background-image: linear-gradient(to bottom,#F6BB93,#FBA490,#FB8985,#FC666F,#B83253 );
-
 }
-#content {
 
+#content {
   margin: 0 auto;
+  text-align: center;
   width: 650px;
   font-family: 'Abel';font-size: 22px;
- 
 }
 
-#greeting-container {
-  margin: 0px;
-}
+
 
 .image img{
   margin: 10px;
   max-height: 200px;
   max-width: 200px;
-
 }
 
 .button{
   padding: 16px 32px;
   text-align: center;
-  text-decoration: none;
   font-family: 'Abel';font-size: 22px;
   display: inline-block;
   transition-duration: 0.4s;
@@ -35,8 +29,8 @@
   border: 2px solid #FFB997;
   margin-left: auto;
   margin-right: auto;
-
 }
+
  button:hover{
   background-color: #FFB997;
   color: white;
