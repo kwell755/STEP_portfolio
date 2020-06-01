@@ -1,11 +1,14 @@
+#background{
 
+     background-image: linear-gradient(to bottom,#F6BB93,#FBA490,#FB8985,#FC666F,#B83253 );
+
+}
 #content {
+
+  margin: 0 auto;
+  width: 650px;
+  font-family: 'Abel';font-size: 22px;
  
-  padding: 0px;
-  margin:0px;
-  border: 0px;
-  background-image: linear-gradient(to bottom,#F6BB93,#FBA490,#FB8985,#FC666F,#B83253, #651B40 );
-  text-align: center;
 }
 
 #greeting-container {
