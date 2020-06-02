@@ -8,6 +8,7 @@ body{
   width: 650px;
   font-family: 'Abel';
   font-size: 22px;
+  
 }
 
 .image img{
@@ -29,4 +30,8 @@ body{
  button:hover{
   background-color: #FFB997;
   color: white;
+}
+#list{
+
+    padding:15px;
 }
