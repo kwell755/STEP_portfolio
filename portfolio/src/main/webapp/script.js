@@ -35,9 +35,9 @@ function KaylaTrivia(){
     }
 
     if(points >=3){
-        alert('Your final score is ' + points + ' Yay you did great!');
+        alert(`Your final score is ${points}  Yay you did great!`);
     }
     else{
-         alert('Your final score is ' + points + ' Oof maybe try again?');
+         alert(`Your final score is ${points}  Oof maybe try again?`);
     }
 }
