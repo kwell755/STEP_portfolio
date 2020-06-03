@@ -15,14 +15,29 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Kayla is 19 years old'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+function KaylaTrivia(){
+   const correctAnswers = ['b','a','b','c'] ;
+   const questions= ['Which hackathon did my team take home our first win? \n a-Google b-Amazon Games c-Bison Hacks','Where am I from? \n a-Buffalo b-NYC c-LA','Out of these places, which one do I want to travel to the most? \n a-Utah b-Italy c-France','In which one of these orgs do I hold a E-Board position? \n a-Student Council b-NSBE c-ACM'];
+   var points = 0;
+   var userAns;
+    
+    for(i=0;i< questions.length;i++){
+        user_ans = prompt(questions[i], "???");
+        if(userAns==correctAnswers[i]){
+            points+=1;
+            alert(`Correct! You have a score of ${points} points`);
+        }
+        else{
+             alert(`Incorrect:( You have a score of ${points} points`);
+        }
+    }
+
+    if(points >=3){
+        alert(`Your final score is ${points}  Yay you did great!`);
+    }
+    else{
+         alert(`Your final score is ${points}  Oof maybe try again?`);
+    }
 }
