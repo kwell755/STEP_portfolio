@@ -41,3 +41,32 @@ function KaylaTrivia(){
          alert(`Your final score is ${points}  Oof maybe try again?`);
     }
 }
+function getMessage() {
+  console.log('Fetching a random quote.');
+
+  // The fetch() function returns a Promise because the request is asynchronous.
+  const responsePromise = fetch('/data');
+
+  // When the request is complete, pass the response into handleResponse().
+  responsePromise.then(handleResponse);
+}
+
+function handleResponse(response) {
+  console.log('Handling the response.');
+
+  // response.text() returns a Promise, because the response is a stream of
+  // content and not a simple variable.
+  const textPromise = response.text();
+
+  // When the response is converted to text, pass the result into the
+  // addQuoteToDom() function.
+  textPromise.then(addQuoteToDom);
+}
+
+/** Adds a random quote to the DOM. */
+function addQuoteToDom(quote) {
+  console.log('Adding quote to dom: ' + quote);
+
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
+}
