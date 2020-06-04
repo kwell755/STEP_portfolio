@@ -70,3 +70,28 @@ function addQuoteToDom(quote) {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+
+/*function getData() {
+  fetch('/data').then(response => response.json()).then((greeting) => {
+    // stats is an object, not a string, so we have to
+    // reference its fields to create HTML content
+    const greetingList = document.getElementById('server-stats-container');
+    greetingList.innerHTML = '';
+    greetingList.appendChild(
+        createListElement('Greeting 1: ' + greeting.Greeting1));
+    greetngList.appendChild(
+        createListElement('Greeting 2: ' + greeting.Greeting2));
+    greetingList.appendChild(
+        createListElement('Greeting 3: ' + greeting.Greeting3));
+  });
+}
+*/
+/** Creates an <li> element containing text. */
+/*function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+*/
+
