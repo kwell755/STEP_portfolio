@@ -15,8 +15,9 @@
 /**
  * Adds a random greeting to the page.
  */
+window.kaylaTrivia = kaylaTrivia;
 
-function kaylaTrivia() {// eslint-disable-line
+function kaylaTrivia() {
   const correctAnswers = ['b', 'a', 'b', 'c'];
   const questions = [
     'Which hackathon did my team take home our first win? \n a-Google b-Amazon Games c-Bison Hacks',
@@ -42,7 +43,10 @@ function kaylaTrivia() {// eslint-disable-line
     alert(`Your final score is ${points}  Oof maybe try again?`);
   }
 }
-function getMessage() {// eslint-disable-line
+
+window.getMessage = getMessage;
+function getMessage() {
+  // eslint-disable-line
   /** The fetch() function returns a Promise because the request is asynchronous. */
   const responsePromise = fetch('/data');
 
