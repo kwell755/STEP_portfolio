@@ -42,56 +42,36 @@ function KaylaTrivia(){
     }
 }
 function getMessage() {
-  console.log('Fetching a random quote.');
-
-  // The fetch() function returns a Promise because the request is asynchronous.
+  /** The fetch() function returns a Promise because the request is asynchronous. */
   const responsePromise = fetch('/data');
 
-  // When the request is complete, pass the response into handleResponse().
+  /**  When the request is complete, pass the response into handleResponse(). */
   responsePromise.then(handleResponse);
 }
 
 function handleResponse(response) {
-  console.log('Handling the response.');
 
-  // response.text() returns a Promise, because the response is a stream of
-  // content and not a simple variable.
+
+  /** response.text() returns a Promise, because the response is a stream of
+  * content and not a simple variable.
+  */
   const textPromise = response.text();
 
-  // When the response is converted to text, pass the result into the
-  // addQuoteToDom() function.
+  /**When the response is converted to text, pass the result into the
+  * addQuoteToDom() function.
+  */
   textPromise.then(addQuoteToDom);
 }
 
-/** Adds a random quote to the DOM. */
-function addQuoteToDom(quote) {
-  console.log('Adding quote to dom: ' + quote);
+/** Passing quote to function so that it can be given to the DOM 
+* @param {string} quote string 
+*/
 
+function addQuoteToDom(quote) {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
 
 
-/*function getData() {
-  fetch('/data').then(response => response.json()).then((greeting) => {
-    // stats is an object, not a string, so we have to
-    // reference its fields to create HTML content
-    const greetingList = document.getElementById('server-stats-container');
-    greetingList.innerHTML = '';
-    greetingList.appendChild(
-        createListElement('Greeting 1: ' + greeting.Greeting1));
-    greetngList.appendChild(
-        createListElement('Greeting 2: ' + greeting.Greeting2));
-    greetingList.appendChild(
-        createListElement('Greeting 3: ' + greeting.Greeting3));
-  });
-}
-*/
-/** Creates an <li> element containing text. */
-/*function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  return liElement;
-}
-*/
+
 
