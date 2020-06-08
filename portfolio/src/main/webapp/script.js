@@ -16,7 +16,7 @@
  * Adds a random greeting to the page.
  */
 
-function KaylaTrivia() {
+function kaylaTrivia() { // eslint-disable-line
   const correctAnswers = ['b', 'a', 'b', 'c'];
   const questions = [
     'Which hackathon did my team take home our first win? \n a-Google b-Amazon Games c-Bison Hacks',
@@ -24,11 +24,10 @@ function KaylaTrivia() {
     'Out of these places, which one do I want to travel to the most? \n a-Utah b-Italy c-France',
     'In which one of these orgs do I hold a E-Board position? \n a-Student Council b-NSBE c-ACM',
   ];
-  var points = 0;
-  var userAns;
-
-  for (i = 0; i < questions.length; i++) {
-    user_ans = prompt(questions[i], '???');
+  let points = 0;
+  let userAns;
+  for (let i = 0; i < questions.length; i++) {
+    userAns = prompt(questions[i], '???');
     if (userAns == correctAnswers[i]) {
       points += 1;
       alert(`Correct! You have a score of ${points} points`);
@@ -43,7 +42,7 @@ function KaylaTrivia() {
     alert(`Your final score is ${points}  Oof maybe try again?`);
   }
 }
-function getMessage() {
+function getMessage() { // eslint-disable-line
   /** The fetch() function returns a Promise because the request is asynchronous. */
   const responsePromise = fetch('/data');
 
@@ -57,7 +56,7 @@ function handleResponse(response) {
    */
   const textPromise = response.text();
 
-  /**When the response is converted to text, pass the result into the
+  /** When the response is converted to text, pass the result into the
    * addQuoteToDom() function.
    */
   textPromise.then(addQuoteToDom);
