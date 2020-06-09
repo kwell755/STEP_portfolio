@@ -52,6 +52,7 @@ public class DataServlet extends HttpServlet {
 
     // Respond with the result.
     response.setContentType("text/html;");
+    // redirect to index html to see comments on page
     response.sendRedirect("/index.html");
   }
 }
