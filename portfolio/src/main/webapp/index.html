@@ -10,7 +10,7 @@
     />
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload = "getMessage()">
     <div id="background">
       <div id="content">
         <h1>Kayla Harwell's Portfolio</h1>
@@ -154,15 +154,25 @@
 
           <li id="list">
             At the end of the day I get all of my music from the "Pollen"
-            playlist on Spoifify so I'd check there too.
+            playlist on Spotify so I'd check there too.
           </li>
         </ul>
 
         <h2>Click Here For a Trivia Game About Me!</h2>
         <button onclick="kaylaTrivia()" class="button">Lets Go!</button>
-        <button onclick="getMessage()">Button</button>
-        <div id="quote-container"></div>
-      </div>
+        
+    
+      <form action="/data" method="POST">
+
+      <p>Leave a comment!</p>
+      <textarea name="user-ans"></textarea>
+      <br/><br/>
+      <input type="submit" class="button" />
+    </form>
+        <div id="quote-container" onload = "getMessage()"></div>
+    
+
+    </div>
     </div>
   </body>
 </html>
