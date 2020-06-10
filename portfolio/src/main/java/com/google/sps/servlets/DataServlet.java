@@ -14,6 +14,9 @@
 
 package com.google.sps.servlets;
 
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.annotation.WebServlet;
@@ -52,6 +55,15 @@ public class DataServlet extends HttpServlet {
 
     // Respond with the result.
     response.setContentType("text/html;");
+
+    // creating an entity to keep track of comments
+    Entity commentEntity = new Entity("Comment");
+    commentEntity.setProperty("message", text);
+
+    // Storing that entity in datastore to save comments from being lost
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    datastore.put(commentEntity);
+
     // redirect to index html to see comments on page
     response.sendRedirect("/index.html");
   }
