@@ -45,6 +45,7 @@ function kaylaTrivia() {
 }
 
 window.getMessage = getMessage;
+window.onload = getMessage;
 function getMessage() {
   // eslint-disable-line
   /** The fetch() function returns a Promise because the request is asynchronous. */

@@ -32,26 +32,23 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-   
 
-   
     Query query = new Query("Comment");
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
-     ArrayList<String> tasks = new ArrayList<>();
+    ArrayList<String> messages = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
       String savedMessage = (String) entity.getProperty("message");
-      tasks.add(savedMessage);
+      messages.add(savedMessage);
     }
-
     response.setContentType("application/json;");
-    response.getWriter().println(convertToJson(tasks));
+    response.getWriter().println(convertToJson(messages));
   }
 
-  private String convertToJson(ArrayList<String> message) {
+  private String convertToJson(ArrayList<String> messages) {
     String json = "";
-    for (int i = 0; i < message.size(); i++) {
-      json += "\n" + message.get(i);
+    for (int i = 0; i < messages.size(); i++) {
+      json += messages.get(i) + "\n";
     }
     return json;
   }
@@ -60,7 +57,6 @@ public class DataServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.
     String text = request.getParameter("user-ans");
-  
 
     // Respond with the result.
     response.setContentType("text/html;");
