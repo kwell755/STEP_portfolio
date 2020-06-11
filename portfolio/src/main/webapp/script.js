@@ -44,7 +44,6 @@ function kaylaTrivia() {
   }
 }
 
-
 window.onload = getMessage;
 function getMessage() {
   // eslint-disable-line
@@ -76,8 +75,10 @@ function addQuoteToDom(quote) {
   quoteContainer.innerText = quote;
 }
 
+window.onload = createMap;
 function createMap() {
-  const map = new google.maps.Map(
-      document.getElementById('map'),
-      {center: {lat: 37.422, lng: -122.084}, zoom: 16});
+  const map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 42.8864, lng: -78.8784 },
+    zoom: 16,
+  });
 }
