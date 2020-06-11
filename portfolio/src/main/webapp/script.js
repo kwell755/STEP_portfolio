@@ -81,4 +81,35 @@ function createMap() {
     center: { lat: 42.8864, lng: -78.8784 },
     zoom: 16,
   });
+
+   const buffalo = new google.maps.Marker({
+    position: { lat: 42.8864, lng: -78.8784 },
+    map: map,
+    title: 'Where Im Born! Buffalo,NY'
+  });
+
+  const howard = new google.maps.Marker({
+    position: { lat:38.9227, lng:-77.0194},
+    map: map,
+    title: 'Where I Go To School! Howard University'
+  });
+
+  const summerProgram= new google.maps.Marker({
+    position: { lat:37.4104, lng: -122.0598},
+    map: map,
+    title: 'My First Summer Experience Out On My Own, The UNCF CS Summer Academy at Carnegie Mellon SV '
+  });
+
+
+  const hackathon= new google.maps.Marker({
+    position: { lat:38.9041209,lng: -77.0482908},
+    map: map,
+    title: ' Where My Team And I Won Our First Hackathon'
+  });
+  
+   const futureLocation= new google.maps.Marker({
+    position: { lat:40.6971494,lng:-74.2598665},
+    map: map,
+    title: ' Where I Want To Live After I Graduate'
+  });
 }
