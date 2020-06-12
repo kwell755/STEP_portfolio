@@ -163,9 +163,17 @@
         <h2>Take a Tour of Some Important Places in My Life!</h2>
         <div id="map"></div>
 
+        <h3> Click to see...</h3>
+        <div class="map-buttons">
+        <button id = 'cali' onclick = "changeLocation(37.4104,-122.0598)" class="button"> Where I did my CS Summer program</button>
+        <button id = 'howard'  onclick = "changeLocation(38.9227,-77.0194)" class="button"> Where I go to school</button>
+        <button id='buff' onclick = "changeLocation(42.8864,-78.8784)" class="button"> Where I grew up</button>
+        <button id = 'nyc'  onclick = "changeLocation(40.7484405,-73.9878531)" class="button"> Where I want to live after I graduate</button>
+        <div>
+
         <h2>Click Here For a Trivia Game About Me!</h2>
         <button onclick="kaylaTrivia()" class="button">Lets Go!</button>
-
+    
         <form action="/data" method="POST">
           <p>Leave a comment!</p>
           <textarea name="user-ans"></textarea>

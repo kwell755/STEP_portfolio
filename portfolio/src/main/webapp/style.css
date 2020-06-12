@@ -57,3 +57,13 @@ button:hover {
   width: 500px;
   margin: 0 auto;
 }
+
+.map-buttons button{
+
+    padding: 15px;
+    margin-top: 5px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
