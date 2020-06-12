@@ -58,12 +58,9 @@ button:hover {
   margin: 0 auto;
 }
 
-.map-buttons button{
-
-    padding: 15px;
-    margin-top: 5px;
-    margin-left:5px;
-    margin-right:5px;
-
+.map-buttons button {
+  padding: 15px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
-

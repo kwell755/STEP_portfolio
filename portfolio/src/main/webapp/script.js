@@ -76,17 +76,15 @@ function addQuoteToDom(quote) {
   quoteContainer.innerText = quote;
 }
 
-
-
 const google = window.google;
 window.onload = createMap;
-
+let map = window.map;
 
 function createMap() {
-    window.map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 42.8864, lng: -78.8784 },
-    zoom: 30,
-    mapTypeId: 'satellite'
+    zoom: 20,
+    mapTypeId: 'satellite',
   });
 
   const buffalo = new google.maps.Marker({
@@ -125,12 +123,10 @@ function createMap() {
       'My first time in Californa! This experience is so near and dear to my heart and it lead me to me meet so many friends from different HBCUs',
   });
 
-  
-
   summerProgramWindow.open(map, summerProgram);
 
   const futureLocation = new google.maps.Marker({
-    position: { lat: 40.7484405, lng:-73.9878531},
+    position: { lat: 40.7484405, lng: -73.9878531 },
     map: map,
     title: ' Where I want To live after I graduate',
   });
@@ -142,9 +138,7 @@ function createMap() {
 
   futureLocationWindow.open(map, futureLocation);
 }
-
-function changeLocation(updatedLat,updatedLong){
-
-         map.setCenter(new google.maps.LatLng(updatedLat, updatedLong));
+window.changeLocation=changeLocation;
+function changeLocation(updatedLat, updatedLong) {
+  map.setCenter(new google.maps.LatLng(updatedLat, updatedLong));
 }
-
