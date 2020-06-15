@@ -50,3 +50,17 @@ button:hover {
 #server-stats-container {
   margin-top: 20px;
 }
+
+#map {
+  border: thin solid black;
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.map-buttons button {
+  padding: 15px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
