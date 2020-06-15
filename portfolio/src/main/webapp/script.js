@@ -45,7 +45,12 @@ function kaylaTrivia() {
   }
 }
 
-window.onload = getMessage;
+window.onload = function() {
+  getMessage();
+  createMap();
+  createMarkers();
+};
+
 function getMessage() {
   // eslint-disable-line
   /** The fetch() function returns a Promise because the request is asynchronous. */
@@ -77,8 +82,7 @@ function addQuoteToDom(quote) {
 }
 
 const google = window.google;
-window.onload = createMap;
-let map = window.map;
+let map;
 
 function createMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -86,7 +90,9 @@ function createMap() {
     zoom: 20,
     mapTypeId: 'satellite',
   });
+}
 
+function createMarkers() {
   const buffalo = new google.maps.Marker({
     position: { lat: 42.8864, lng: -78.8784 },
     map: map,
@@ -138,7 +144,23 @@ function createMap() {
 
   futureLocationWindow.open(map, futureLocation);
 }
-window.changeLocation=changeLocation;
+
 function changeLocation(updatedLat, updatedLong) {
   map.setCenter(new google.maps.LatLng(updatedLat, updatedLong));
 }
+
+document.getElementById('cali').addEventListener('click', function() {
+  changeLocation(37.4104, -122.0598);
+});
+
+document.getElementById('howard').addEventListener('click', function() {
+  changeLocation(38.9227, -77.0194);
+});
+
+document.getElementById('buff').addEventListener('click', function() {
+  changeLocation(42.8864, -78.8784);
+});
+
+document.getElementById('nyc').addEventListener('click', function() {
+  changeLocation(40.7484405, -73.9878531);
+});
