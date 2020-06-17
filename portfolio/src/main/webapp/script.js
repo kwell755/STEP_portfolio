@@ -45,7 +45,12 @@ function kaylaTrivia() {
   }
 }
 
-window.onload = getMessage;
+window.onload = function () {
+  getMessage();
+  createMap();
+  createMarkers();
+};
+
 function getMessage() {
   // eslint-disable-line
   /** The fetch() function returns a Promise because the request is asynchronous. */
@@ -77,8 +82,31 @@ function addQuoteToDom(quote) {
 }
 
 const google = window.google;
-window.onload = createMap;
-let map = window.map;
+let map;
+const markerLocations = {
+  buffalo: [
+    42.8864,
+    -78.8784,
+    'This is where I was born and raised. It is a pretty nice city with great scenery but I have to say there is not a lot fun places here other than the mall, Dave and Busters and the park.',
+  ],
+  howard: [
+    38.9227,
+    -77.0194,
+    'My favorite HBCU, Howard University! This school has opened so many doors for me and allowed me to meet some of the funniest people in my life.',
+  ],
+
+  summerProgram: [
+    37.4104,
+    -122.0598,
+    'My first summer experience out on my own, The UNCF CS Summer Academy at Carnegie Mellon SV ',
+  ],
+
+  futureLocation: [
+    40.7484405,
+    -73.9878531,
+    'I have always wanted to live in NYC and hopefully after I graduate I will be able to move here.',
+  ],
+};
 
 function createMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -86,59 +114,46 @@ function createMap() {
     zoom: 20,
     mapTypeId: 'satellite',
   });
-
-  const buffalo = new google.maps.Marker({
-    position: { lat: 42.8864, lng: -78.8784 },
-    map: map,
-    title: 'Where I was born! Buffalo,NY',
-  });
-
-  const buffaloWindow = new google.maps.InfoWindow({
-    content:
-      'This is where I was born and raised. It is a pretty nice city with great scenery but I have to say there is not a lot fun places here other than the mall, Dave and Busters and the park.',
-  });
-  buffaloWindow.open(map, buffalo);
-
-  const howard = new google.maps.Marker({
-    position: { lat: 38.9227, lng: -77.0194 },
-    map: map,
-    title: 'Where I go to school! Howard University',
-  });
-
-  const howardWindow = new google.maps.InfoWindow({
-    content:
-      'My favorite HBCU, Howard University! This school has opened so many doors for me and allowed me to meet some of the funniest people of in life.',
-  });
-  howardWindow.open(map, howard);
-
-  const summerProgram = new google.maps.Marker({
-    position: { lat: 37.4104, lng: -122.0598 },
-    map: map,
-    title:
-      'My first summer experience out on my own, The UNCF CS Summer Academy at Carnegie Mellon SV ',
-  });
-
-  const summerProgramWindow = new google.maps.InfoWindow({
-    content:
-      'My first time in Californa! This experience is so near and dear to my heart and it lead me to me meet so many friends from different HBCUs',
-  });
-
-  summerProgramWindow.open(map, summerProgram);
-
-  const futureLocation = new google.maps.Marker({
-    position: { lat: 40.7484405, lng: -73.9878531 },
-    map: map,
-    title: ' Where I want To live after I graduate',
-  });
-
-  const futureLocationWindow = new google.maps.InfoWindow({
-    content:
-      'I have always wanted to live in NYC and hopefully after I graduate I will be able to move here.',
-  });
-
-  futureLocationWindow.open(map, futureLocation);
 }
-window.changeLocation=changeLocation;
+
+function createMarkers() {
+  for (const key in markerLocations) {
+    if (key) {
+      const marker = new google.maps.Marker({
+        position: {
+          lat: markerLocations[key][0],
+          lng: markerLocations[key][1],
+        },
+        map: map,
+      });
+      createInfoWindows(marker, key);
+    }
+  }
+}
+
+function createInfoWindows(marker, key) {
+  const infoWindow = new google.maps.InfoWindow({
+    content: markerLocations[key][2],
+  });
+  infoWindow.open(map, marker);
+}
+
 function changeLocation(updatedLat, updatedLong) {
   map.setCenter(new google.maps.LatLng(updatedLat, updatedLong));
 }
+
+document.getElementById('cali').addEventListener('click', function () {
+  changeLocation(37.4104, -122.0598);
+});
+
+document.getElementById('howard').addEventListener('click', function () {
+  changeLocation(38.9227, -77.0194);
+});
+
+document.getElementById('buff').addEventListener('click', function () {
+  changeLocation(42.8864, -78.8784);
+});
+
+document.getElementById('nyc').addEventListener('click', function () {
+  changeLocation(40.7484405, -73.9878531);
+});

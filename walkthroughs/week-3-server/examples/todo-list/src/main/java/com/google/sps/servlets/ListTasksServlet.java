@@ -41,7 +41,7 @@ public class ListTasksServlet extends HttpServlet {
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
 
-   List<Task> tasks = new ArrayList<>();
+    List<Task> tasks = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
       long id = entity.getKey().getId();
       String title = (String) entity.getProperty("title");
