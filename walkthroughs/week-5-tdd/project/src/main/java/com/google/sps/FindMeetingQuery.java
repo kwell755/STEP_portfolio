@@ -48,7 +48,7 @@ public final class FindMeetingQuery {
                 *   [  a  ]  
                 *       [  b  ]
                 * <------WHOLE DAY ------>
-                * If there is a prior meeting a that cuts into b, the busy time recorded for meeting b will only be from the ramge of (end of a -- end of b)
+                * If there is a prior meeting a that cuts into b, the busy time recorded for meeting b will only be from the range of (end of a -- end of b)
                 */  
 
                 if( prev_end_time >= event.getWhen().start() && prev_end_time <= event.getWhen().end() ){

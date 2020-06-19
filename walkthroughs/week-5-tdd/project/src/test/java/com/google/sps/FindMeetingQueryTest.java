@@ -236,7 +236,7 @@ public final class FindMeetingQueryTest {
 
     Assert.assertEquals(expected, actual);
   }
-  /*
+  
  @Test
   public void noConflicts() {
     MeetingRequest request =
@@ -270,7 +270,7 @@ public final class FindMeetingQueryTest {
 
     Assert.assertEquals(expected, actual);
   }
-  */
+  
   
 }
 
