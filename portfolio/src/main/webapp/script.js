@@ -45,7 +45,7 @@ function kaylaTrivia() {
   }
 }
 
-window.onload = function () {
+window.onload = () => {
   getMessage();
   createMap();
   createMarkers();
@@ -142,18 +142,18 @@ function changeLocation(updatedLat, updatedLong) {
   map.setCenter(new google.maps.LatLng(updatedLat, updatedLong));
 }
 
-document.getElementById('cali').addEventListener('click', function () {
+document.getElementById('cali').addEventListener('click', () => {
   changeLocation(37.4104, -122.0598);
 });
 
-document.getElementById('howard').addEventListener('click', function () {
+document.getElementById('howard').addEventListener('click', () => {
   changeLocation(38.9227, -77.0194);
 });
 
-document.getElementById('buff').addEventListener('click', function () {
+document.getElementById('buff').addEventListener('click', () => {
   changeLocation(42.8864, -78.8784);
 });
 
-document.getElementById('nyc').addEventListener('click', function () {
+document.getElementById('nyc').addEventListener('click', () => {
   changeLocation(40.7484405, -73.9878531);
 });
