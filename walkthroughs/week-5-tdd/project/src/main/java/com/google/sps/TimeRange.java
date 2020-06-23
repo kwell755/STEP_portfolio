@@ -28,12 +28,7 @@ public final class TimeRange {
 
   /** A comparator for sorting ranges by their start time in ascending order. */
   public static final Comparator<TimeRange> ORDER_BY_START =
-      new Comparator<TimeRange>() {
-        @Override
-        public int compare(TimeRange a, TimeRange b) {
-          return Long.compare(a.start, b.start);
-        }
-      };
+      (TimeRange a, TimeRange b) -> Long.compare(a.start, b.start);
 
   /** A comparator for sorting ranges by their end time in ascending order. */
   public static final Comparator<TimeRange> ORDER_BY_END =
